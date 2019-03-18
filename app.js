@@ -1,3 +1,4 @@
+$(document).ready(function(){
 var config = {
   apiKey: config1.MY_KEY,
   authDomain: "britt-project.firebaseapp.com",
@@ -14,32 +15,40 @@ var trainName;
 var destination;
 var firstTime;
 var frequency;
+var nextArrival;
+var minutesAway;
 
-$('.btn').on('click', function () {
+$('button').on('click', function () {
   event.preventDefault();
+
+  $('.table-body').append('<tr>');
 
   trainName = $('#trainName').val().trim();
   destination = $('#destination').val().trim();
   firstTime = $('#firstTime').val().trim();
   frequency = $('#frequency').val().trim();
+  // nextArrival = moment().add(frequency, 'm');
 
-  database.ref().push ({
+  database.ref().push({
     trainName: trainName,
     destination: destination,
     firstTime: firstTime,
-    frequency: frequency
+    frequency: frequency,
+    dateAdded: firebase.database.ServerValue.TIMESTAMP
   });
+});
 
-  var newTableRow = $('<tr>');
-  var newTableData = $('<td>');
+  // var newTableRow = $('<tr>');
+  // var newTableData = $('<td>');
 
-  newTableData.append(trainName);
-  newTableData.append(destination);
-  newTableData.append(firstTime);
-  newTableData.append(frequency);
+  // newTableData.append(trainName);
+  // newTableData.append(destination);
+  // newTableData.append(firstTime);
+  // newTableData.append(frequency);
+  // newTableData.append(nextArrival);
 
-  newTableData.append(newTableRow);
+  // newTableData.append(newTableRow);
 
-  newTableRow.append('.table-body');
+  // newTableRow.append('.table-body');
 
 })
