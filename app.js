@@ -1,5 +1,5 @@
 var config = {
-  apiKey: config.MY_KEY,
+  apiKey: config1.MY_KEY,
   authDomain: "britt-project.firebaseapp.com",
   databaseURL: "https://britt-project.firebaseio.com",
   projectId: "britt-project",
@@ -23,15 +23,23 @@ $('.btn').on('click', function () {
   firstTime = $('#firstTime').val().trim();
   frequency = $('#frequency').val().trim();
 
-  var newTableRow = $('<tr>');
-  var newTableData = $('<td>');
-
-  
-
   database.ref().push ({
     trainName: trainName,
     destination: destination,
     firstTime: firstTime,
     frequency: frequency
   });
+
+  var newTableRow = $('<tr>');
+  var newTableData = $('<td>');
+
+  newTableData.append(trainName);
+  newTableData.append(destination);
+  newTableData.append(firstTime);
+  newTableData.append(frequency);
+
+  newTableData.append(newTableRow);
+
+  newTableRow.append('.table-body');
+
 })
