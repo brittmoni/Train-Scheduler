@@ -1,6 +1,6 @@
 $(document).ready(function(){
 var config = {
-  apiKey: config1.MY_KEY,
+  apiKey: 'AIzaSyBnOO8N3mNfIIMyYiojSq83PfPeGQ6nFpo',
   authDomain: "britt-project.firebaseapp.com",
   databaseURL: "https://britt-project.firebaseio.com",
   projectId: "britt-project",
@@ -36,6 +36,19 @@ $('button').on('click', function () {
     frequency: frequency,
     dateAdded: firebase.database.ServerValue.TIMESTAMP
   });
+
+  var newTableRow = $('<tr>');
+  var newTableData = $('<td>');
+
+  newTableData.append(trainName);
+  newTableData.append(destination);
+  newTableData.append(firstTime);
+  newTableData.append(frequency);
+  newTableData.append(nextArrival);
+
+  newTableData.append(newTableRow);
+
+  newTableRow.append('.table-body');
 });
 
   // var newTableRow = $('<tr>');
