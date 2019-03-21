@@ -40,11 +40,11 @@ $('button').on('click', function () {
   var newTableRow = $('<tr>');
   var newTableData = $('<td>');
 
-  newTableData.append(trainName);
-  newTableData.append(destination);
-  newTableData.append(firstTime);
-  newTableData.append(frequency);
-  newTableData.append(nextArrival);
+  trainName.append(newTableData);
+  destination.append(newTableData);
+  firstTime.append(newTableData);
+  frequency.append(newTableData);
+  nextArrival.append(newTableData);
 
   newTableData.append(newTableRow);
 
